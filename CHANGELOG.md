@@ -4,6 +4,8 @@ All notable changes to this project are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+> **Historical-record boundary:** Changelog entries preserve release history. References to governance labels, tiers, certification, or validation describe project terminology at the time and do not establish current independent certification or production readiness.
+
 ---
 
 ## [Unreleased]
@@ -26,4 +28,4 @@ Versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-_Maintained by ndrorchestration | DGAF-certified | Governed by Agent Amethyst + Sentinel_
+_Maintained by ndrorchestration | Project-local governance/evaluation terminology may appear in historical records; it is not an external certification claim._
