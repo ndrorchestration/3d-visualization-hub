@@ -1,41 +1,52 @@
 # Contributing to 3D Visualization Hub
 
-## Governance
+## Authority and evidence boundary
 
-This repository is the **GCP Phase 4** deployment layer of the PhiLattice / PDMAL ecosystem, meta-orchestrated by **Agent Amethyst** and governed under the [DGAF Framework](https://github.com/ndrorchestration/DGAF-Framework).
+This repository is an **experimental visualization workstream**. Current authority comes from repository-local source, CI evidence, dated deployment/runtime evidence where available, and explicit maintainer decisions.
 
-**GCP Project:** `encoded-blend-482316-g2`  
-**Region:** `us-central1`  
-**Service:** Cloud Run · 3d-viz-hub
+Historical references to DGAF, PDMAL, Agent Amethyst, COLLEEN, or GCP phase labels describe project lineage or intended integration context. They do not confer autonomous governance, certification, production status, or cross-repository validation.
 
-## What This Repo Does
+## What this repository does
 
-- Interactive 3D data visualizations via Plotly, Matplotlib, Streamlit
-- Phi-harmonic modal analysis visualizations
-- Real-time cloud streaming from GCP Storage buckets
-- Multi-dimensional phi-calculus data exploration
+- Interactive 3D and multidimensional visualization via Plotly, Matplotlib, and Streamlit where implemented.
+- Experimental phi-harmonic, modal, topology, and modeled-state visualization.
+- Cloud deployment/storage integration where actually configured in source.
+- Rendering and inspection of external or ecosystem-derived data where an implemented data path exists.
 
-## Standards & Attribution
+A visualization does not prove the modeled phenomenon. A cloud configuration does not prove a live service. A repository-local cost target does not prove external billing enforcement.
 
-- **Google Cloud Run** — Deployment substrate
-- **Phi-Harmonic Modal Analysis** — Visualization substrate
-- **DGAF DemiJoule Cost Gate** — Monthly burn ≤ $25/mo enforced
-- **OpenTelemetry OTel v1.41.0+** — Observability
+## Contribution rules
 
-## IP Notice
+1. Open an issue with a clear visualization or infrastructure use case.
+2. Branch from current `main`.
+3. Keep implementation claims tied to source/tests that exist in this repository.
+4. For GCP or deployment changes, distinguish **configured target** from **observed live runtime**.
+5. If making a live deployment claim, include dated source → deployment → runtime evidence.
+6. If making a cost-control claim, identify the actual external enforcement mechanism and dated billing/telemetry evidence; otherwise describe it as a target or configuration only.
+7. Submit screenshots when they help review rendered output, but treat screenshots as rendering evidence only—not mathematical, scientific, or production validation.
+8. Do not infer DGAF/PDMAL state from references or shared terminology.
 
-Core phi constants, frequency tuning tables, and constraint optimization algorithms are **not included**. Visualization architecture and GCP configuration only.
+## Technical references
 
-## How to Contribute
+The repository may contain or target:
 
-1. Open an issue with a clear visualization use case
-2. Fork and branch from `main`
-3. All GCP configuration changes must be reviewed against the Phase 4 spec (cost gate: ≤ $25/mo)
-4. Submit PR with screenshot evidence of rendered visualization
+- Google Cloud Run configuration;
+- GCP storage configuration;
+- OpenTelemetry instrumentation;
+- Plotly, Matplotlib, and Streamlit rendering;
+- phi-harmonic or PDMAL-related visualization vocabulary.
 
-## Cross-References
+Verify the current source before treating any of these as implemented or active.
 
-- [DGAF-Framework](https://github.com/ndrorchestration/DGAF-Framework) — Governance & NDR patterns
-- [Acoustic-mesh](https://github.com/ndrorchestration/Acoustic-mesh) — Audio signal substrate
-- [Driftwatch](https://github.com/ndrorchestration/Driftwatch) — Drift detection layer
-- [ai-governance-frameworks](https://github.com/ndrorchestration/ai-governance-frameworks) — Standards alignment
+## IP notice
+
+Project-specific constants, tuning tables, and optimization details may be intentionally omitted from public artifacts. Contribution review must not treat missing proprietary detail as evidence for or against broader scientific claims.
+
+## Related repositories
+
+- [DGAF-Framework](https://github.com/ndrorchestration/DGAF-Framework) — separate governance/evaluation research track
+- [Acoustic-mesh](https://github.com/ndrorchestration/Acoustic-mesh) — separate acoustic/signal-processing track
+- [Driftwatch](https://github.com/ndrorchestration/Driftwatch) — separate drift-detection track
+- [ai-governance-frameworks](https://github.com/ndrorchestration/ai-governance-frameworks) — separate standards-alignment track
+
+Cross-repository references do not transfer validation.

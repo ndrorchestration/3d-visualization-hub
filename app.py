@@ -1,7 +1,6 @@
 import streamlit as st
 import plotly.graph_objects as go
 import numpy as np
-from plotly.subplots import make_subplots
 
 # Page configuration
 st.set_page_config(
@@ -46,7 +45,7 @@ if page == "Home":
     st.markdown("""<div class='feature-box'>
     Welcome to your 3D Visualization Hub! Explore interactive visualizations of complex data.
     </div>""", unsafe_allow_html=True)
-    
+
     col1, col2, col3 = st.columns(3)
     with col1:
         st.metric("Visualizations", "4+")
@@ -59,16 +58,16 @@ if page == "Home":
 elif page == "Phi-Harmonic Wave":
     st.subheader("🎵 Phi-Harmonic Wave Surface")
     st.write("Visualization of harmonic frequencies based on the golden ratio")
-    
+
     # Golden ratio
     PHI = 1.618
-    
+
     # Create mesh
     t = np.linspace(0, 4*np.pi, 100)
     x = np.outer(np.cos(PHI * t), np.ones(len(t)))
     y = np.outer(np.sin(1/PHI * t), np.ones(len(t)))
     z = np.sin(x) * np.cos(y)
-    
+
     # Create 3D surface plot
     fig = go.Figure(data=[go.Surface(x=x, y=y, z=z, colorscale='Viridis')])
     fig.update_layout(
@@ -83,7 +82,7 @@ elif page == "Phi-Harmonic Wave":
 elif page == "Modal Frequencies":
     st.subheader("📊 Modal Frequency Orchestration")
     st.write("Your AI agents in modal frequency space")
-    
+
     # Agent data (using your agent framework)
     agents = {
         'Agent Apogee': {'x': 1.618, 'y': 0.618, 'z': 2.4, 'frequency': 432, 'color': '#E94B3C'},
@@ -91,13 +90,13 @@ elif page == "Modal Frequencies":
         'Professor': {'x': 1.2, 'y': 2.1, 'z': 1.8, 'frequency': 440, 'color': '#A23B72'},
         'DemiJoule': {'x': 2.5, 'y': 0.9, 'z': 2.7, 'frequency': 396, 'color': '#F18F01'}
     }
-    
+
     fig = go.Figure()
-    
+
     for agent_name, coords in agents.items():
         fig.add_trace(go.Scatter3d(
-            x=[coords['x']], 
-            y=[coords['y']], 
+            x=[coords['x']],
+            y=[coords['y']],
             z=[coords['z']],
             mode='markers+text',
             text=[agent_name],
@@ -108,11 +107,13 @@ elif page == "Modal Frequencies":
                 line=dict(color='white', width=2)
             ),
             name=agent_name,
-            hovertemplate=f"<b>{agent_name}</b><br>" +
-                         f"Position: ({coords['x']:.2f}, {coords['y']:.2f}, {coords['z']:.2f})<br>" +
-                         f"Frequency: {coords['frequency']}Hz<extra></extra>"
+            hovertemplate=(
+                f"<b>{agent_name}</b><br>"
+                f"Position: ({coords['x']:.2f}, {coords['y']:.2f}, {coords['z']:.2f})<br>"
+                f"Frequency: {coords['frequency']}Hz<extra></extra>"
+            )
         ))
-    
+
     fig.update_layout(
         title="AI Agent Modal Frequency Space",
         scene=dict(
@@ -129,16 +130,16 @@ elif page == "Modal Frequencies":
 elif page == "System Topology":
     st.subheader("🔗 Recursive System Topology")
     st.write("Governance framework visualization")
-    
+
     # Create a random 3D network
     np.random.seed(42)
     n_nodes = 12
     x = np.random.randn(n_nodes)
     y = np.random.randn(n_nodes)
     z = np.random.randn(n_nodes)
-    
+
     fig = go.Figure()
-    
+
     # Add edges (simplified)
     for i in range(n_nodes-1):
         fig.add_trace(go.Scatter3d(
@@ -147,7 +148,7 @@ elif page == "System Topology":
             line=dict(color='rgba(0, 217, 255, 0.5)', width=2),
             showlegend=False
         ))
-    
+
     # Add nodes
     fig.add_trace(go.Scatter3d(
         x=x, y=y, z=z,
@@ -155,7 +156,7 @@ elif page == "System Topology":
         marker=dict(size=10, color='#00D9FF', line=dict(color='white', width=1)),
         name='Nodes'
     ))
-    
+
     fig.update_layout(
         title="System Topology Network",
         scene=dict(xaxis_title="X", yaxis_title="Y", zaxis_title="Z"),
@@ -168,7 +169,7 @@ elif page == "System Topology":
 elif page == "Data Explorer":
     st.subheader("📈 Custom Data Explorer")
     st.write("Upload your own data and visualize it in 3D")
-    
+
     col1, col2, col3 = st.columns(3)
     with col1:
         x_range = st.slider("X Range", 0, 10, 5)
@@ -176,7 +177,7 @@ elif page == "Data Explorer":
         y_range = st.slider("Y Range", 0, 10, 5)
     with col3:
         z_range = st.slider("Z Range", 0, 10, 5)
-    
+
     # Generate sample data
     np.random.seed(42)
     data_points = 100
@@ -184,7 +185,7 @@ elif page == "Data Explorer":
     y = np.random.randn(data_points) * y_range
     z = np.random.randn(data_points) * z_range
     colors = np.sqrt(x**2 + y**2 + z**2)
-    
+
     fig = go.Figure(data=[go.Scatter3d(
         x=x, y=y, z=z,
         mode='markers',
@@ -195,7 +196,7 @@ elif page == "Data Explorer":
             showscale=True
         )
     )])
-    
+
     fig.update_layout(
         title="Custom 3D Data Scatter Plot",
         scene=dict(xaxis_title="X", yaxis_title="Y", zaxis_title="Z"),
