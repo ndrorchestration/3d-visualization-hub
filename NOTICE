@@ -1,21 +1,21 @@
 3D Visualization Hub
-Copyright 2025-2026 Ndr "Ender" Hensel (Flickerflash)
+Copyright 2025-2026 Ndr "Ender" Hensel (`ndrorchestration`)
 
 Licensed under the MIT License.
 See the LICENSE file for the full terms.
 
 ---
 
-This repository is part of the Flickerflash DGAF ecosystem.
-It provides interactive 3D visualization for governance scores, drift trajectories,
-phi-harmonic modal analysis, and agent chain rendering.
+This repository is an experimental visualization workstream maintained under `ndrorchestration`.
+It provides interactive 3D visualization for modeled state, governance/evaluation data, drift trajectories, phi-harmonic/modal concepts, and related rendering experiments where implemented.
 
-Governance Authority: Agent Amethyst (DGAF ecosystem)
-Ecosystem Spine: https://github.com/Flickerflash/DGAF-Framework
-Primary Data Sources:
-  - Driftwatch: https://github.com/Flickerflash/Driftwatch
-  - junior-apogee-app: https://github.com/Flickerflash/junior-apogee-app
+Historical DGAF, Agent Amethyst, COLLEEN, and other ecosystem labels are provenance vocabulary only. They do not establish autonomous governance, certification, production deployment, mathematical validity, scientific validity, or cross-repository evidence transfer.
 
-Developed by Ndr "Ender" Hensel (Flickerflash)
-AI Orchestration Engineer & Systems Architect, Columbus OH
-https://github.com/Flickerflash
+Related repositories:
+  - DGAF-Framework: https://github.com/ndrorchestration/DGAF-Framework
+  - Driftwatch: https://github.com/ndrorchestration/Driftwatch
+  - junior-apogee-app: https://github.com/ndrorchestration/junior-apogee-app
+
+Current implementation and evidence must be evaluated from this repository's source, CI, and dated external/runtime evidence where available.
+
+Developed by Ndr "Ender" Hensel (`ndrorchestration`).
