@@ -1,34 +1,38 @@
-# Governance Declaration
+# Governance and Provenance Boundary
 
-**Governing framework:** DGAF-Framework ([ndrorchestration/DGAF-Framework](https://github.com/ndrorchestration/DGAF-Framework))  
-**DGAF version:** v1.0.0-anchor (post-S070-r3)  
-**Protocol anchor:** [GOVERNANCE_CONSTITUTION.md](https://github.com/ndrorchestration/DGAF-Framework/blob/main/docs/GOVERNANCE_CONSTITUTION.md) · SHA `5a1feb796604970344cd93d972534928de141e0f`  
-**Governing agent:** Agent Amethyst (meta-orchestrator)  
-**Institutional anchor:** COLLEEN  
-**φ attractor:** 1.61818  
-**Harmonic baseline:** Ionian (drift threshold: θ = 0.009)  
-**STRUCT-QA-001:** https://github.com/ndrorchestration/DGAF-Framework/issues/36  
-**Filed:** 2026-07-03 · DA-02 closure · Recursive Audit 2026-07-03  
+## Current authority
 
----
+Current repository state is governed by **repository-local source, CI results, dated deployment/runtime evidence where available, and explicit maintainer decisions**.
 
-## Scope
+References to DGAF, PDMAL, Agent Amethyst, COLLEEN, phi-harmonic protocols, or older ecosystem control records describe project lineage, research vocabulary, or historical coordination. They do **not** transfer governance authority, scientific state, certification, deployment state, or empirical validation into this repository.
 
-3d-visualization-hub governs PDMAL topological visualization artifacts within the DGAF ecosystem. This repo is the rendering substrate for PDMAL-φ (pentagonal) and PDMAL-D (dodecahedral) lattice geometry, agent-node relationship visualization, and the 3D triad formation telemetry surface referenced in the NDR Pattern Registry triadic telemetry guidance (S070-r3-P1).
+## Current evidence rules
 
-## Applicable Protocols
+- Source and CI establish only the implementation/checks that actually ran on the bound revision.
+- Deployment configuration is not proof that a Cloud Run service, storage integration, or streaming path is currently live.
+- A repository-local cost target or cost-checking concept is not proof that an external billing limit is currently enforced.
+- Rendering a mathematical or topological construct is not evidence that the underlying construct is optimal, physically meaningful, or empirically validated.
+- DGAF/PDMAL gates remain authoritative only in their own controlling repositories and evidence chains.
+- Cross-repository references are provenance/integration context, not mutual validation.
 
-- **P-33** PDMAL Convergence Monitor (ADVISORY) — lattice topology source
-- **P-32** Fibonacci Phi-Closure Gate (BLOCKING) — phi-alignment gate
-- **P-06** Topology × Orchestration Matrix Lab (ADVISORY) — experiment surface
-- **P-29** Sentinel-Annotated Risk Pass (BLOCKING) — safety hook
-- **CONSENSUS_TRIAD / CONDUCTED_TRIAD** formation patterns — visualization targets
-- **NDR-133** Personal Document Firewall (BLOCKING-ABSOLUTE)
+## Historical declaration — filed 2026-07-03
 
-## Audit Trail
+The repository previously carried a stronger ecosystem-governance declaration associated with a 2026-07-03 STRUCT-QA-001 filing. The following identifiers are preserved as **historical provenance only** and are not current authorization predicates:
 
-- Filed: 2026-07-03 · STRUCT-QA-001 Gap 1 · Amethyst × COLLEEN
-- Parent issue: https://github.com/ndrorchestration/DGAF-Framework/issues/36
-- Constitutional authority: GOVERNANCE_CONSTITUTION.md Part V, T2-01
-- Registry watermark at filing: P-41 (S071)
-- Stasis window: EXPIRED (2026-07-13)
+- historical DGAF label: `v1.0.0-anchor (post-S070-r3)`;
+- historical constitution reference: `GOVERNANCE_CONSTITUTION.md` at SHA `5a1feb796604970344cd93d972534928de141e0f`;
+- historical coordination labels: `Agent Amethyst` and `COLLEEN`;
+- historical modeled phi attractor: `1.61818`;
+- historical harmonic baseline: Ionian, with recorded drift threshold `θ = 0.009`;
+- historical issue reference: `ndrorchestration/DGAF-Framework#36`;
+- historical protocol labels: P-33, P-32, P-06, P-29, CONSENSUS_TRIAD / CONDUCTED_TRIAD, and NDR-133.
+
+Those records are retained to preserve chronology. They do not establish that the referenced framework version, protocol state, agent/persona label, cloud deployment, cost gate, or scientific claim is currently active or valid here.
+
+## Repository scope
+
+`3d-visualization-hub` is an experimental visualization workstream for multidimensional, modeled-state, topology, and related 3D rendering. Where it renders PDMAL- or DGAF-related material, it is a visualization substrate only unless a separate, dated evidence chain establishes more.
+
+## Promotion rule
+
+Do not describe this repository as production-ready, independently certified, mathematically validated, scientifically validated, or operationally governed by another repository unless current, reproducible evidence directly supports that specific claim.
