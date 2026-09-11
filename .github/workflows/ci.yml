@@ -1,10 +1,13 @@
-name: CI — Lint, Audit & Build
+name: CI — Lint, Audit, Build & Evidence Boundary
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
   lint:
@@ -22,7 +25,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run flake8
         run: flake8 . --max-line-length=120 --exclude=.git,__pycache__,*.egg-info
-        continue-on-error: true
 
   audit:
     name: pip-audit (Dependency Vulnerability Scan)
@@ -41,7 +43,6 @@ jobs:
           else
             echo "No requirements.txt found — skipping audit."
           fi
-        continue-on-error: true
 
   build:
     name: App Boot Check
@@ -58,3 +59,44 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Syntax check app.py
         run: python -m py_compile app.py && echo "app.py syntax OK"
+
+  evidence-boundary:
+    name: Evidence Boundary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify current-facing authority and claim boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          required_markers = {
+              Path('README.md'): ('Epistemic status', 'Cross-repository references'),
+              Path('GOVERNANCE.md'): ('## Current authority', 'historical provenance only'),
+              Path('CONTRIBUTING.md'): ('## Authority and evidence boundary', 'Cross-repository references do not transfer validation.'),
+              Path('NOTICE'): ('provenance vocabulary only', 'Current implementation and evidence'),
+          }
+          for path, markers in required_markers.items():
+              text = path.read_text(encoding='utf-8')
+              for marker in markers:
+                  if marker not in text:
+                      raise SystemExit(f'missing evidence-boundary marker {marker!r} in {path}')
+
+          banned = (
+              'Governing agent:',
+              'Governance Authority: Agent Amethyst',
+              'meta-orchestrated by **Agent Amethyst**',
+              'DGAF DemiJoule Cost Gate',
+              '≤ $25/mo enforced',
+              'github.com/Flickerflash',
+          )
+          for path in (Path('GOVERNANCE.md'), Path('CONTRIBUTING.md'), Path('NOTICE')):
+              text = path.read_text(encoding='utf-8')
+              for token in banned:
+                  if token in text:
+                      raise SystemExit(f'stale current-facing claim {token!r} in {path}')
+
+          print('EVIDENCE_BOUNDARY_PASS')
+          PY
