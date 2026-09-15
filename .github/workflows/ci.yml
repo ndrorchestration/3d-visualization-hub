@@ -88,11 +88,21 @@ jobs:
               'Governing agent:',
               'Governance Authority: Agent Amethyst',
               'meta-orchestrated by **Agent Amethyst**',
+              'Meta-orchestrated by Agent Amethyst',
+              'Governed by [DGAF-Framework]',
               'DGAF DemiJoule Cost Gate',
               '≤ $25/mo enforced',
               'github.com/Flickerflash',
           )
-          for path in (Path('GOVERNANCE.md'), Path('CONTRIBUTING.md'), Path('NOTICE')):
+          current_paths = (
+              Path('GOVERNANCE.md'),
+              Path('CONTRIBUTING.md'),
+              Path('NOTICE'),
+              Path('.github/pull_request_template.md'),
+              Path('.github/ISSUE_TEMPLATE/bug_report.md'),
+              Path('.github/ISSUE_TEMPLATE/feature_request.md'),
+          )
+          for path in current_paths:
               text = path.read_text(encoding='utf-8')
               for token in banned:
                   if token in text:
